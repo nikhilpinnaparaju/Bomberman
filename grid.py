@@ -1,4 +1,4 @@
-lines = 20
+lines = 19
 columns = 19
 
 grid = []

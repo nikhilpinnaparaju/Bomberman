@@ -1,5 +1,5 @@
 from grid import *
-from input import *
+from inp import *
 
 grid[1][1] = 'B'
 
@@ -8,6 +8,19 @@ class person():
         self.life=1
         self.location= {'x':1,'y':1}
 
-bomber = person()
+class bomberman(person):
+    def __init__(self):
+        person.__init__(self)
+        self.life=3
 
+    def dropBomb(self):
+        while 1:
+            drop = getch()
+
+            if drop == 'b':
+                grid[self.location['x']][self.location['y']] = 'b'
+
+bomber = bomberman()
 print_board(grid)
+
+controller(bomber)
