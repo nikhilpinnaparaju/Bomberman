@@ -5,4 +5,7 @@ while 1:
     if control=='q':
         break
     else:
+        # if control=='w':
+            
+
         print("you moved:",control)

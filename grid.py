@@ -25,4 +25,4 @@ def print_board(grid):
             print("".join(row))
 
 # print(grid)
-print_board(grid)
+# print_board(grid)
