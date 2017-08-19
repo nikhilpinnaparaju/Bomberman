@@ -13,14 +13,8 @@ class bomberman(person):
         person.__init__(self)
         self.life=3
 
-    def dropBomb(self):
-        while 1:
-            drop = getch()
-
-            if drop == 'b':
-                grid[self.location['x']][self.location['y']] = 'b'
-
 bomber = bomberman()
+
 print_board(grid)
 
 controller(bomber)
