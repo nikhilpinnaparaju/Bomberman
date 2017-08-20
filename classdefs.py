@@ -1,6 +1,8 @@
 from threader import *
-from classdefs import *
+from grid import *
+from inp import moveEnemies
 import time
+import random
 
 class person():
     def __init__(self):
@@ -27,6 +29,15 @@ class bomb(RepeatedTimer):
         else:
             self.stop()
 
-class enemy():
+class enemy(RepeatedTimer):
     def __init__(self):
         person.__init__(self)
+        self.location = {'x':random.randrange(19), 'y':random.randrange(19)}
+        
+        while (grid[self.location['x']][self.location['y']]!=' '):
+            self.location['x'] = random.randrange(19)
+            self.location['y'] = random.randrange(19)
+
+        # self.moveEnemies = moveEnemies
+
+        RepeatedTimer.__init__(self,1,moveEnemies(self))

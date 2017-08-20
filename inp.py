@@ -6,6 +6,7 @@ import time
 import sys,select
 import termios
 import sys, tty
+import random
 
 def controller(bomber):
     while 1:
@@ -72,3 +73,38 @@ def controller(bomber):
         print_board(grid)
 
         print("you moved:",control)
+
+def moveEnemies(enemy):
+    q = random.randrange(3)
+
+    if (q==0):
+        if (grid[enemy.location['x']][enemy.location['y']+1] != 'X'):
+            if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                grid[enemy.location['x']][enemy.location['y']] = ' '
+
+            grid[enemy.location['x']][enemy.location['y']+1] = 'E'
+            enemy.location['y'] = enemy.location['y'] + 1
+    
+    if (q==1):
+        if (grid[enemy.location['x']-1][enemy.location['y']] != 'X'):
+            if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                grid[enemy.location['x']][enemy.location['y']] = ' '
+
+            grid[enemy.location['x']-1][enemy.location['y']] = 'E'
+            enemy.location['x'] = enemy.location['x'] - 1
+
+    if (q==2):
+        if (grid[enemy.location['x']+1][enemy.location['y']] != 'X'):
+            if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                grid[enemy.location['x']][enemy.location['y']] = ' '
+
+            grid[enemy.location['x']+1][enemy.location['y']] = 'E'
+            enemy.location['x'] = enemy.location['x'] + 1
+
+    if (q==3):
+        if (grid[enemy.location['x']][enemy.location['y']-1] != 'X'):
+            if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                grid[enemy.location['x']][enemy.location['y']] = ' '
+
+            grid[enemy.location['x']][enemy.location['y']-1] = 'E'
+            enemy.location['y'] = enemy.location['y'] - 1
