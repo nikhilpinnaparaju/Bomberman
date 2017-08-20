@@ -40,4 +40,4 @@ class enemy(RepeatedTimer):
 
         # self.moveEnemies = moveEnemies
 
-        RepeatedTimer.__init__(self,1,moveEnemies(self))
+        RepeatedTimer.__init__(self,1,moveEnemies,self)
