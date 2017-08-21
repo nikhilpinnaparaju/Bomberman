@@ -56,7 +56,7 @@ def controller(bomber):
                         bomber.location['x'] = bomber.location['x']+1
 
                 if control=='b':
-                    if bomber.bombs_left:
+                    if bomber.bomb.bombs_left:
                         grid[bomber.location['x']][bomber.location['y']] = str(bomber.bomb.time_left)
                         bomber.bomb.location['x'] = bomber.location['x']
                         bomber.bomb.location['y'] = bomber.location['y']
