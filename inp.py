@@ -60,19 +60,18 @@ def controller(bomber):
                         grid[bomber.location['x']][bomber.location['y']] = str(bomber.bomb.time_left)
                         bomber.bomb.location['x'] = bomber.location['x']
                         bomber.bomb.location['y'] = bomber.location['y']
-                        bomber.bombs_left = bomber.bombs_left - 1
+                        bomber.bomb.bombs_left = bomber.bomb.bombs_left - 1
                         bomber.bomb.start()
 
-        if (not(bomber.bomb.location['x']==None) and not(bomber.bomb.location['y']==None)):
-            grid[bomber.bomb.location['x']][bomber.bomb.location['y']] = str(bomber.bomb.time_left)    
+        # if (not(bomber.bomb.location['x']==None) and not(bomber.bomb.location['y']==None)):
+            # grid[bomber.bomb.location['x']][bomber.bomb.location['y']] = str(bomber.bomb.time_left)    
 
         if control == 'q':
             break
 
-        os.system('clear')
         print_board(grid)
 
-        print("you moved:",control)
+        # print("you moved:",control)
 
 def moveEnemies(enemy):
     q = random.randrange(3)
@@ -108,3 +107,5 @@ def moveEnemies(enemy):
 
             grid[enemy.location['x']][enemy.location['y']-1] = 'E'
             enemy.location['y'] = enemy.location['y'] - 1
+
+    print_board(grid)

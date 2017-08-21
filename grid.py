@@ -1,3 +1,5 @@
+import os
+
 lines = 19
 columns = 19
 
@@ -20,9 +22,10 @@ for row in range(lines):
             grid[row].append(' ')
 
 def print_board(grid):
-	for row in grid:
+    os.system('clear')
+    for row in grid:
 		# for ch in row:
-            print("".join(row))
+        print("".join(row),'\n',end='\r')
 
 # print(grid)
 # print_board(grid)
