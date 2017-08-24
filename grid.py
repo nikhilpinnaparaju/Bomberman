@@ -1,5 +1,6 @@
 import os
 import random
+from termcolor import colored, cprint
 
 score = 0
 
@@ -25,12 +26,12 @@ for row in range(lines):
             grid[row].append(' ')
 
 for i in range(25):
-    x = random.randrange(lines)
-    y = random.randrange(columns)
+    x = random.randrange(3,lines)
+    y = random.randrange(3,columns)
 
     while grid[x][y] != ' ':
-        x = random.randrange(lines)
-        y = random.randrange(columns)
+        x = random.randrange(3,lines)
+        y = random.randrange(3,columns)
 
     grid[x][y] = '/'
 
@@ -44,14 +45,26 @@ def convert(grid):
     output = [[" " for i in range(4 * columns)] for j in range(2 * lines)]
     for i in range(len(grid)):
         for j in range(len(grid)):
-            output[2 * j][4 * i] = grid[i][j]
-            output[2 * j][4 * i + 1] = grid[i][j]
-            output[2 * j][4 * i + 2] = grid[i][j]
-            output[2 * j][4 * i + 3] = grid[i][j]
-            output[2 * j + 1][4 * i] = grid[i][j]
-            output[2 * j + 1][4 * i + 1] = grid[i][j]
-            output[2 * j + 1][4 * i + 2] = grid[i][j]
-            output[2 * j + 1][4 * i + 3] = grid[i][j]
+
+            if grid[i][j] == '3' or grid[i][j] == '2' or grid[i][j] == '1' or grid[i][j] == '0': 
+                output[2 * j][4 * i] = '['
+                output[2 * j][4 * i + 1] = grid[i][j]
+                output[2 * j][4 * i + 2] = grid[i][j]
+                output[2 * j][4 * i + 3] = ']'
+                output[2 * j + 1][4 * i] = '['
+                output[2 * j + 1][4 * i + 1] = grid[i][j]
+                output[2 * j + 1][4 * i + 2] = grid[i][j]
+                output[2 * j + 1][4 * i + 3] = ']'
+
+            else:
+                output[2 * j][4 * i] = grid[i][j]
+                output[2 * j][4 * i + 1] = grid[i][j]
+                output[2 * j][4 * i + 2] = grid[i][j]
+                output[2 * j][4 * i + 3] = grid[i][j]
+                output[2 * j + 1][4 * i] = grid[i][j]
+                output[2 * j + 1][4 * i + 1] = grid[i][j]
+                output[2 * j + 1][4 * i + 2] = grid[i][j]
+                output[2 * j + 1][4 * i + 3] = grid[i][j]
 
     return output
 
@@ -59,8 +72,10 @@ def convert(grid):
 def print_board(grid):
     output = convert(grid)
 
-    os.system('clear')
+    # os.system('clear')
     for row in output:
         print("".join(row), '\n', end='\r')
-    print("Lives: ", 3, " Score:", score, end='\r')
+
+    final = colored("Lives: 3, Score: 0",'white','on_red')
+    cprint(final,end = '\r')
     print("\n")

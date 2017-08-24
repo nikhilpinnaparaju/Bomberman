@@ -1,0 +1,32 @@
+-20161118
+-Nikhil Pinnaparaju
+
+Hi, Welcome to my custom terminal based game of Bomberman.
+
+The controls used are normal:-
+
+W - Move Up
+A - Move Left
+S - Move Down
+D - Move right
+B - Plant Bomb
+Q - Quit
+
+Enemies are spawned at random locations and so are the bricks leading to multiple possible levels.
+
+The game using threading and so it runs multiple parallel process at the same time hence not stopping the game's core mechanics such as enemy movement
+or bomb countdown with the user does not provide input. This was the hardest part and took a lot of trials and implementations to make work.
+
+OOPS concepts such as Modularity, Inheritance, Encapsulation and Polymorphism have been used in this project creation.
+
+Existing classes:-
+
+Person
+Bomberman
+Bomb
+Enemy
+RepeatedTimer
+Bricks
+
+Hope you enjoy the game.
+Thanks in Advance.
