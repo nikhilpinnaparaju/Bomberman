@@ -22,7 +22,7 @@ for row in range(lines):
             grid[row].append(' ')
 
 def print_board(grid):
-    os.system('clear')
+    # os.system('clear')
     for row in grid:
 		# for ch in row:
         print("".join(row),'\n',end='\r')

@@ -106,7 +106,5 @@ def moveEnemies(enemy):
             grid[enemy.location['x']][enemy.location['y']-1] = 'E'
             enemy.location['y'] = enemy.location['y'] - 1
 
-    # if ((grid[enemy.location['x']] - grid[bomb.location['x']]) - (grid[enemy.location['y']] - grid[bomb.location['y']] < 2):
-
     print_board(grid)
     
