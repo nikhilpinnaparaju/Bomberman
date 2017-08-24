@@ -42,15 +42,21 @@ class killingFunction(RepeatedTimer):
         repl = self.enemies
         bomber = self.bomber
 
-        if (bomber.bomb.location['x'] != None):
+        if (bomber.bomb.location['x'] is not None):
             for enemy in repl:
-                if ((grid[enemy.location['x']] - grid[bomber.bomb.location['x']]) - (grid[enemy.location['y']] - grid[bomber.bomb.location['y']]) < 2):
+                if ((grid[enemy.location['x']] -
+                     grid[bomber.bomb.location['x']]) -
+                        (grid[enemy.location['y']] -
+                            grid[bomber.bomb.location['y']]) < 2):
                     grid[enemy.location['x']][enemy.location['y']] = " "
                     enemy.stop()
                     enemies.discard(enemy)
 
-        if (bomber.bomb.location['x'] != None):
-            if ((grid[bomber.location['x']] - grid[bomber.bomb.location['x']]) - (grid[bomberman.location['y']] - grid[bomber.bomb.location['y']]) < 2) and bomber.life:
+        if (bomber.bomb.location['x'] is not None):
+            if (((grid[bomber.location['x']] -
+                 grid[bomber.bomb.location['x']]) -
+                (grid[bomberman.location['y']] -
+                    grid[bomber.bomb.location['y']]) < 2) and bomber.life):
                 bomber.life = bomber.life - 1
                 grid[bomber.location['x']][bomber.location['y']] = " "
                 bomber.location['x'] = 1

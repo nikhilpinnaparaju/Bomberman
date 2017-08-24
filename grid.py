@@ -13,7 +13,8 @@ for row in range(lines):
     grid.append([])
 
     for col in range(columns):
-        if (row == 0) or (col == 0) or (row == lines - 1) or (col == columns - 1):
+        if ((row == 0) or (col == 0) or (row == lines - 1) or
+                (col == columns - 1)):
             grid[row].append('X')
 
         elif row % 2:
@@ -26,12 +27,12 @@ for row in range(lines):
             grid[row].append(' ')
 
 for i in range(25):
-    x = random.randrange(3,lines)
-    y = random.randrange(3,columns)
+    x = random.randrange(3, lines)
+    y = random.randrange(3, columns)
 
     while grid[x][y] != ' ':
-        x = random.randrange(3,lines)
-        y = random.randrange(3,columns)
+        x = random.randrange(3, lines)
+        y = random.randrange(3, columns)
 
     grid[x][y] = '/'
 
@@ -46,7 +47,8 @@ def convert(grid):
     for i in range(len(grid)):
         for j in range(len(grid)):
 
-            if grid[i][j] == '3' or grid[i][j] == '2' or grid[i][j] == '1' or grid[i][j] == '0': 
+            if (grid[i][j] == '3' or grid[i][j] == '2' or
+                    grid[i][j] == '1' or grid[i][j] == '0'):
                 output[2 * j][4 * i] = '['
                 output[2 * j][4 * i + 1] = grid[i][j]
                 output[2 * j][4 * i + 2] = grid[i][j]
@@ -76,6 +78,6 @@ def print_board(grid):
     for row in output:
         print("".join(row), '\n', end='\r')
 
-    final = colored("Lives: 3, Score: 0",'white','on_red')
-    cprint(final,end = '\r')
+    final = colored("Lives: 3, Score: 0", 'white', 'on_red')
+    cprint(final, end='\r')
     print("\n")
