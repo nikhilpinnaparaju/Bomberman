@@ -32,15 +32,18 @@ for i in enemies:
 
 class killingFunction(RepeatedTimer):
 
-    def kill(self,enemies,bomber):
+    def kill(self):
         print("KILLLLLLLLL")
+        print(self.enemies,self.bomber)
 
-        repl = enemies
+        repl = self.enemies
         for enemy in repl:
-            if ((grid[enemy.location['x']] - grid[bomber.bomb.location['x']]) - (grid[enemy.location['y']] - grid[bomber.bomb.location['y']]) < 2):
+            if ((grid[enemy.location['x']] - grid[self.bomber.bomb.location['x']]) - (grid[enemy.location['y']] - grid[self.bomber.bomb.location['y']]) < 2):
                 grid[enemy.location['x']][enemy.location['y']] = " "
                 enemy.stop()
                 enemies.discard(enemy)
+
+        bomber = self.bomber
 
         if ((grid[bomber.location['x']] - grid[bomber.bomb.location['x']]) - (grid[bomberman.location['y']] - grid[bomber.bomb.location['y']]) < 2) and bomber.life: 
             bomber.life = bomber.life - 1

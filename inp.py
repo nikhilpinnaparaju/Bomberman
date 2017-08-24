@@ -68,6 +68,7 @@ def controller(bomber):
             break
 
         print_board(grid)
+
     os._exit(1)
         # print("you moved:",control)
 

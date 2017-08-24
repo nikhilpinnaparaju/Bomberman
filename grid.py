@@ -1,5 +1,7 @@
 import os
 
+score = 0
+
 lines = 19
 columns = 19
 
@@ -22,10 +24,10 @@ for row in range(lines):
             grid[row].append(' ')
 
 def print_board(grid):
-    # os.system('clear')
+    os.system('clear')
     for row in grid:
 		# for ch in row:
         print("".join(row),'\n',end='\r')
-
+    print("Lives: ",3," Score:",score, end = '\r')
 # print(grid)
 # print_board(grid)
