@@ -9,18 +9,16 @@ import sys, tty
 import random
 
 def controller(bomber):
-    while 1:
+    while bomber.life:
 
         control = getch()
         
-        # print(control)
+        print(control)
         
         if (control):
-        
-            # print(sys.stdin.readline().strip())
-            # sys.stdout.flush()
             if control=='q':
                 break
+
             else:
                 if control=='d':
                     if grid[bomber.location['x']][bomber.location['y']+1] != 'X':
@@ -70,7 +68,7 @@ def controller(bomber):
             break
 
         print_board(grid)
-
+    os._exit(1)
         # print("you moved:",control)
 
 def moveEnemies(enemy):
@@ -108,4 +106,7 @@ def moveEnemies(enemy):
             grid[enemy.location['x']][enemy.location['y']-1] = 'E'
             enemy.location['y'] = enemy.location['y'] - 1
 
+    # if ((grid[enemy.location['x']] - grid[bomb.location['x']]) - (grid[enemy.location['y']] - grid[bomb.location['y']] < 2):
+
     print_board(grid)
+    
