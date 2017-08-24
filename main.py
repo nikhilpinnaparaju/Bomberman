@@ -65,7 +65,7 @@ class killingFunction(RepeatedTimer):
                     grid[1][1] = "B"
 
                 elif (bomber.life == 0):
-                    printf("Game Over")
+                    print("Game Over")
                     os._exit(1)
 
 scoring = killingFunction()
