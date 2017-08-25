@@ -93,39 +93,40 @@ def controller(bomber):
     # print("you moved:",control)
 
 
-def moveEnemies(enemy):
-    q = random.randrange(3)
+def moveEnemies(enemies):
+    for enemy in enemies:
+        q = random.randrange(3)
 
-    if (q == 0):
-        if (grid[enemy.location['x']][enemy.location['y'] + 1] != 'X' and grid[enemy.location['x']][enemy.location['y'] + 1] != '/'):
-            if grid[enemy.location['x']][enemy.location['y']] == 'E':
-                grid[enemy.location['x']][enemy.location['y']] = ' '
+        if (q == 0):
+            if (grid[enemy.location['x']][enemy.location['y'] + 1] != 'X' and grid[enemy.location['x']][enemy.location['y'] + 1] != '/'):
+                if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                    grid[enemy.location['x']][enemy.location['y']] = ' '
 
-            grid[enemy.location['x']][enemy.location['y'] + 1] = 'E'
-            enemy.location['y'] = enemy.location['y'] + 1
+                grid[enemy.location['x']][enemy.location['y'] + 1] = 'E'
+                enemy.location['y'] = enemy.location['y'] + 1
 
-    if (q == 1):
-        if (grid[enemy.location['x'] - 1][enemy.location['y']] != 'X' and grid[enemy.location['x'] - 1][enemy.location['y']] != '/'):
-            if grid[enemy.location['x']][enemy.location['y']] == 'E':
-                grid[enemy.location['x']][enemy.location['y']] = ' '
+        if (q == 1):
+            if (grid[enemy.location['x'] - 1][enemy.location['y']] != 'X' and grid[enemy.location['x'] - 1][enemy.location['y']] != '/'):
+                if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                    grid[enemy.location['x']][enemy.location['y']] = ' '
 
-            grid[enemy.location['x'] - 1][enemy.location['y']] = 'E'
-            enemy.location['x'] = enemy.location['x'] - 1
+                grid[enemy.location['x'] - 1][enemy.location['y']] = 'E'
+                enemy.location['x'] = enemy.location['x'] - 1
 
-    if (q == 2):
-        if (grid[enemy.location['x'] + 1][enemy.location['y']] != 'X' and grid[enemy.location['x'] + 1][enemy.location['y']] != '/'):
-            if grid[enemy.location['x']][enemy.location['y']] == 'E':
-                grid[enemy.location['x']][enemy.location['y']] = ' '
+        if (q == 2):
+            if (grid[enemy.location['x'] + 1][enemy.location['y']] != 'X' and grid[enemy.location['x'] + 1][enemy.location['y']] != '/'):
+                if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                    grid[enemy.location['x']][enemy.location['y']] = ' '
 
-            grid[enemy.location['x'] + 1][enemy.location['y']] = 'E'
-            enemy.location['x'] = enemy.location['x'] + 1
+                grid[enemy.location['x'] + 1][enemy.location['y']] = 'E'
+                enemy.location['x'] = enemy.location['x'] + 1
 
-    if (q == 3):
-        if (grid[enemy.location['x']][enemy.location['y'] - 1] != 'X' and grid[enemy.location['x']][enemy.location['y'] - 1] != '/'):
-            if grid[enemy.location['x']][enemy.location['y']] == 'E':
-                grid[enemy.location['x']][enemy.location['y']] = ' '
+        if (q == 3):
+            if (grid[enemy.location['x']][enemy.location['y'] - 1] != 'X' and grid[enemy.location['x']][enemy.location['y'] - 1] != '/'):
+                if grid[enemy.location['x']][enemy.location['y']] == 'E':
+                    grid[enemy.location['x']][enemy.location['y']] = ' '
 
-            grid[enemy.location['x']][enemy.location['y'] - 1] = 'E'
-            enemy.location['y'] = enemy.location['y'] - 1
+                grid[enemy.location['x']][enemy.location['y'] - 1] = 'E'
+                enemy.location['y'] = enemy.location['y'] - 1
 
     print_board(grid)

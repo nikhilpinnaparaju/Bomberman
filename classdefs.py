@@ -86,5 +86,3 @@ class enemy(RepeatedTimer):
         while (grid[self.location['x']][self.location['y']] != ' '):
             self.location['x'] = random.randrange(19)
             self.location['y'] = random.randrange(19)
-
-        RepeatedTimer.__init__(self, 1, moveEnemies, self)
