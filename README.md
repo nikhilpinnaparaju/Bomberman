@@ -21,6 +21,8 @@ OOPS concepts such as Modularity, Inheritance, Encapsulation and Polymorphism ha
 
 To run a level enter the respective directory and run **main.py** in **Python3**
 
+Comments have been added to the Level 1 directory files
+
 ###Existing classes:-
 
 *Person
@@ -49,9 +51,10 @@ Note: Any number of enemies can be added by adding a line in the main.py file (U
 
 #Inheritance - The class *Bomberman* and *Enemy* both inherit properties from the class *Person*
 #Polymorphism - *add* to an *enemies* set puts in another enemy into the collection of *enemies* but when calculating distances between our characters (*bomberman* and *enemy*) and the bomb it sums up two integers
-#Encapsulation - To avoid accidental accessing of variables encapsulation has been applied to variables like *score*
+#Encapsulation - To avoid accidental accessing of variables encapsulation has been applied to variables like *score* and the *init* functions inside class declarations. The function *_exit* should only be called when certain conditions are met and not improperly to suddenly stop execution. Hence it is also properly encapsulated
 #Modularity - The *grid* and our *print_board* functions are all in a file *grid.py*. Similarly, the primary class definitions are all in *classdefs.py* and the python threader we are using for this code is in *threader.py* and so on.
 #Abstraction - The attributes to *bomb* and *bomberman* are all abstracted to the user and carefully placed inside the classes and in their respective functions.
+# Many Classes and objects have also been used covering many OOPS concepts.
 
 Hope you enjoy the game.
 Thanks in Advance.

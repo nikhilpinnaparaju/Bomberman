@@ -9,6 +9,7 @@ import termios
 import sys
 import tty
 import random
+from termcolor import colored, cprint
 
 # The function that moves our bomberman as per the rules, i.e can't move through walls and moves according to user input
 # allows the drop of bombs using 'b' and quit game using 'q'
@@ -89,6 +90,7 @@ def controller(bomber):
             break
 
         print_board(grid)
+        print("Lives: ",bomber.life)
 
     os._exit(1)
     # print("you moved:",control)

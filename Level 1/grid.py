@@ -1,7 +1,7 @@
 import os
 import random
 from termcolor import colored, cprint
-from colored import fore, style
+# from colored import fore, style
 
 score = 0
 
@@ -80,7 +80,3 @@ def print_board(grid):
     os.system('clear')
     for row in output:
         print("".join(row), '\n', end='\r')
-
-    final = colored("Lives: 3, Score: 0", 'white', 'on_red')
-    cprint(final, end='\r')
-    print("\n")

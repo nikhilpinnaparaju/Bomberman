@@ -61,6 +61,10 @@ class killingFunction(RepeatedTimer):
                         if (enemy.life == 0):
                             enemies.discard(enemy)
 
+                            if (len(enemies)==0):
+                                print("All Enemies killed, Level Complete")
+                                os._exit(1)
+
                         else:
                             enemy.life = enemy.life - 1
 
