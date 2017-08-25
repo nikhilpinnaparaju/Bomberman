@@ -26,12 +26,15 @@ enemies = set()
 # declaring some enemies
 a = enemy()
 b = enemy()
-# c = enemy()
+c = enemy()
+d = enemy()
+e = enemy()
 
 enemies.add(a)
 enemies.add(b)
-# enemies.append(c)
-
+enemies.add(c)
+enemies.add(d)
+enemies.add(e)
 # adding the enemies to the grid
 for i in enemies:
     # print(i.location['x'],i.location['y'])

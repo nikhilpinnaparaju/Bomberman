@@ -6,8 +6,8 @@ from termcolor import colored, cprint
 score = 0
 
 # declaration of the number of rows and columns that will be in our grid
-lines = 19
-columns = 19
+lines = 15
+columns = 15
 
 grid = []
 
