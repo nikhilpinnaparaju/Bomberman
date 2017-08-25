@@ -19,7 +19,7 @@ or bomb countdown with the user does not provide input. This was the hardest par
 
 OOPS concepts such as Modularity, Inheritance, Encapsulation and Polymorphism have been used in this project creation.
 
-Existing classes:-
+=Existing classes=:-
 
 Person
 Bomberman
@@ -36,12 +36,16 @@ Note: The movement of enemies is based on a random number generated using python
 it might seem like they are not moving however that is not the case so please consider that it could be the case that the random number generated does
 not allow motion
 
-Levels - 
+=Levels= - 
 
-Level 1 - Regular game of Bomberman. 3 lives for Bomberman and 1 life per Enemy
-Level 2 - Enemies move faster. 2 Lives per Enemy and only 2 lives for Bomberman. Bigger Board. Double number of enemies from Level 1. 
+=Level 1= - Regular game of Bomberman. 3 lives for Bomberman and 1 life per Enemy
+=Level 2=- Enemies move faster. 2 Lives per Enemy and only 2 lives for Bomberman. Bigger Board. Double number of enemies from Level 1. 
 
 Note: Any number of enemies can be added by adding a line in the main.py file (Usage: "<var name> = enemy()" and then "enemies.add(<var name>)")
+
+=Implementation of OOPS Concepts=:- 
+
+=Inheritance= - The class -Bomberman- and -Enemy- both inherit properties from the class -person-
 
 Hope you enjoy the game.
 Thanks in Advance.
