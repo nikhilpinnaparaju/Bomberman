@@ -23,7 +23,7 @@ a = enemy()
 # c = enemy()
 
 enemies.add(a)
-# enemies.append(b)
+# enemies.add(b)
 # enemies.append(c)
 
 for i in enemies:
@@ -50,23 +50,28 @@ class killingFunction(RepeatedTimer):
         if (bomber.bomb.location['x'] is not None):
             for enemy in repl:
                 if (bomber.bomb.time_left == -1):
-                    if ((enemy.location['x'] - bomber.bomb.location['x']) - (enemy.location['y'] - bomber.bomb.location['y']) < 2):
+                    if (abs(enemy.location['x'] - bomber.bomb.location['x']) + abs(enemy.location['y'] - bomber.bomb.location['y']) < 2):
+                        # print("Enemy dies", end = '/r')
                         grid[enemy.location['x']][enemy.location['y']] = " "
                         enemy.stop()
                         enemies.discard(enemy)
 
         if (bomber.bomb.location['x'] is not None):
             if (bomber.bomb.time_left == -1):
-                if (((bomber.location['x'] - bomber.bomb.location['x']) - (bomber.location['y'] - bomber.bomb.location['y']) < 2) and bomber.life):
-                    bomber.life = bomber.life - 1
-                    grid[bomber.location['x']][bomber.location['y']] = " "
-                    bomber.location['x'] = 1
-                    bomber.location['y'] = 1
-                    grid[1][1] = "B"
+                # print("Bomber.x: ",bomber.location['x'], " Bomb.x: ",bomber.bomb.location['x']," Bomber.y: ",bomber.location['y']," Bomb.y: ",bomber.bomb.location['y'])
+                if (abs(bomber.location['x'] - bomber.bomb.location['x']) + abs(bomber.location['y'] - bomber.bomb.location['y']) < 2):
+                    # print((bomber.location['x'] - bomber.bomb.location['x']) + (bomber.location['y'] - bomber.bomb.location['y']))
+                    if (bomber.life):
+                        # print("Bomber loses life",end = '/r')
+                        bomber.life = bomber.life - 1
+                        grid[bomber.location['x']][bomber.location['y']] = " "
+                        bomber.location['x'] = 1
+                        bomber.location['y'] = 1
+                        grid[1][1] = "B"
 
-                elif (bomber.life == 0):
-                    print("Game Over")
-                    os._exit(1)
+                    elif (bomber.life == 0):
+                        print("Game Over")
+                        os._exit(1)
 
 scoring = killingFunction()
 scoring.start()
