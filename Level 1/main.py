@@ -7,6 +7,7 @@ import random
 import os
 import copy
 
+__score = 0
 # declaration of the bomberman on the grid
 grid[1][1] = 'B'
 
@@ -108,7 +109,7 @@ class killingFunction(RepeatedTimer):
 
                 elif (bomber.life == 0):
                     term = ("Game Over")
-                    cprint(term, 'white', 'on_red')
+                    cprint(term, 'white', 'on_red',end='\n\r')
                     os._exit(1)
 
         if (bomber.bomb.location['x'] is not None):
@@ -124,7 +125,7 @@ class killingFunction(RepeatedTimer):
 
                     elif (bomber.life == 0):
                         term = ("Game Over")
-                        cprint(term, 'white', 'on_red')
+                        cprint(term, 'white', 'on_red',end='\n\r')
                         os._exit(1)
 
 # starts the killing check function and the enemy movement function
@@ -138,6 +139,6 @@ print_board(grid)
 # final = colored("Lives: ",bomber.life, " Score: ",score,'white', 'on_red')
 # cprint(final)
 
-print("Lives: ", bomber.life, " Score: ", score)
+print("Lives: ", bomber.life, " Score: ", __score)
 
 controller(bomber)

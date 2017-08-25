@@ -78,5 +78,16 @@ def print_board(grid):
     output = convert(grid)
 
     os.system('clear')
-    for row in output:
-        print("".join(row), '\n', end='\r')
+    for i in range(len(output)):
+        for j in range(len(output[row])):
+            if output[i][j]=="B":
+                print(bcolors.OKBLUE+output[i][j]+ bcolors.ENDC,end="")
+            elif output[i][j]=="E":
+                print(bcolors.FAIL+output[i][j]+ bcolors.ENDC,end="")
+            elif output[i][j]=="/" :
+                print(bcolors.OKGREEN+output[i][j]+ bcolors.ENDC,end="")
+            elif output[i][j]=="1" or output[i][j]=="2" or output[i][j]=="3" or output[i][j]=="e" or output[i][j]=="0":
+                print(bcolors.WARNING+output[i][j]+bcolors.ENDC,end="")
+            else:
+                print(output[i][j],end="")
+        print('\r')
