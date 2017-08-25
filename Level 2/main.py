@@ -62,9 +62,8 @@ class killingFunction(RepeatedTimer):
                             enemies.discard(enemy)
 
                             if (len(enemies)==0):
-                                print("All Enemies killed, Level Complete")
-                                os._exit(1)
-
+                                term = "All Enemies killed, Level Complete"
+                                cprint(term,'white','on_red)
                         else:
                             enemy.life = enemy.life - 1
 
@@ -78,7 +77,8 @@ class killingFunction(RepeatedTimer):
                     grid[1][1] = "B"
 
                 elif (bomber.life == 0):
-                    print("Game Over")
+                    term = ("Game Over")
+                    cprint(term,'white','on_red')
                     os._exit(1)
 
         if (bomber.bomb.location['x'] is not None):
@@ -95,7 +95,8 @@ class killingFunction(RepeatedTimer):
                         grid[1][1] = "B"
 
                     elif (bomber.life == 0):
-                        print("Game Over")
+                        term = ("Game Over")
+                        cprint(term,'white','on_red')
                         os._exit(1)
 
 scoring = killingFunction()
