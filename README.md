@@ -3,6 +3,10 @@
 
 Hi, Welcome to my custom terminal based game of Bomberman.
 
+Must Install Getch library to make the game work.
+Fully working and tested.
+Might have small stuttering due to system differences.
+
 ###The controls used are normal:-
 
 *W - Move Up

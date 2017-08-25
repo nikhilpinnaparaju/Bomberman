@@ -2,6 +2,7 @@ import os
 import random
 from termcolor import colored, cprint
 # from colored import fore, style
+from colors import *
 
 score = 0
 
@@ -86,7 +87,7 @@ def print_board(grid):
                 print(bcolors.FAIL+output[i][j]+ bcolors.ENDC,end="")
             elif output[i][j]=="/" :
                 print(bcolors.OKGREEN+output[i][j]+ bcolors.ENDC,end="")
-            elif output[i][j]=="1" or output[i][j]=="2" or output[i][j]=="3" or output[i][j]=="e" or output[i][j]=="0":
+            elif output[i][j]=="1" or output[i][j]=="2" or output[i][j]=="3" or output[i][j]=="e" or output[i][j]=="0" or output[i][j]=="4" or output[i][j]=="5":
                 print(bcolors.WARNING+output[i][j]+bcolors.ENDC,end="")
             else:
                 print(output[i][j],end="")

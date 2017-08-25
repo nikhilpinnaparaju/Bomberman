@@ -1,6 +1,7 @@
 import os
 import random
 from termcolor import colored, cprint
+from colors import *
 
 score = 0
 
