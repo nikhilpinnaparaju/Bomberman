@@ -20,11 +20,13 @@ enemies = set()
 
 a = enemy()
 b = enemy()
-# c = enemy()
+c = enemy()
+d = enemy()
 
 enemies.add(a)
 enemies.add(b)
-# enemies.append(c)
+enemies.add(c)
+enemies.add(d)
 
 for i in enemies:
     # print(i.location['x'],i.location['y'])

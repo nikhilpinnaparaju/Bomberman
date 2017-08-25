@@ -4,13 +4,15 @@ from inp import moveEnemies
 import time
 import random
 
-
+#Person Class is the fundamental class that all characters are built upon being enemies and Bomberman
 class person():
 
     def __init__(self):
         self.life = 1
 
-
+# The Class declaring the main, playable character of the game being bomberman
+# Has the attributes of the no. of bombs the player has left, and the location is a dictionary along with the number of lifes
+# This is direct use of the concept of inheritance
 class bomberman(person):
 
     def __init__(self):
@@ -19,7 +21,12 @@ class bomberman(person):
         self.location = {'x': 1, 'y': 1}
         self.bombs_left = 1
 
+# The RepeatedTimer class has been declared in the threader.py file
 
+# the class declaring the main weapon of bomberman which is the bomb. It takes in a class RepeatedTimer which is used for threading
+# has a power attribute which tells us blast radius and the time_left to detonation. The remaining attributes are similar to the bomberman class
+# the bomb class has a function blast inside it that explains how the bomb blast works in the game
+# Bomb works asynchronous to the bomberman
 class bomb(RepeatedTimer):
 
     def __init__(self):
@@ -76,7 +83,8 @@ class bomb(RepeatedTimer):
 
         print_board(grid)
 
-
+# The enemy class also takes the RepeatedTimer class which works allows it to work asynchronous to the bomberman and his bombs
+# The enemy are spawned randomly and take an empty place on the board
 class enemy(RepeatedTimer):
 
     def __init__(self):

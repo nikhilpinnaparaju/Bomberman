@@ -7,6 +7,7 @@ import random
 import os
 import copy
 
+# declaration of the bomberman on the grid
 grid[1][1] = 'B'
 
 bomber = bomberman()

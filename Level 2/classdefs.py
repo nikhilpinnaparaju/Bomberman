@@ -80,8 +80,8 @@ class enemy(RepeatedTimer):
 
     def __init__(self):
         person.__init__(self)
-        self.location = {'x': random.randrange(29), 'y': random.randrange(9)}
+        self.location = {'x': random.randrange(29), 'y': random.randrange(29)}
 
         while (grid[self.location['x']][self.location['y']] != ' '):
             self.location['x'] = random.randrange(29)
-            self.location['y'] = random.randrange(9)
+            self.location['y'] = random.randrange(29)

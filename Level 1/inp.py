@@ -10,7 +10,8 @@ import sys
 import tty
 import random
 
-
+# The function that moves our bomberman as per the rules, i.e can't move through walls and moves according to user input
+# allows the drop of bombs using 'b' and quit game using 'q'
 def controller(bomber):
     while bomber.life:
 
@@ -93,6 +94,7 @@ def controller(bomber):
     # print("you moved:",control)
 
 
+# moves the enemies using a random number from 0-3 and prevents movement through the walls
 def moveEnemies(enemies):
     for enemy in enemies:
         q = random.randrange(3)

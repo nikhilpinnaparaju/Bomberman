@@ -4,11 +4,14 @@ from termcolor import colored, cprint
 
 score = 0
 
+# declaration of the number of rows and columns that will be in our grid
 lines = 19
 columns = 19
 
 grid = []
 
+# The following for loops make the board to a design that we would want as soon from the sample in the Problem statement
+# The grid at the moment is in 1*1 elements and later we will convert each element into 2*4 elements
 for row in range(lines):
     grid.append([])
 
@@ -26,6 +29,7 @@ for row in range(lines):
         else:
             grid[row].append(' ')
 
+# Randomly generated bricks that can be destroyed by our bomberman's bomb
 for i in range(25):
     x = random.randrange(3, lines)
     y = random.randrange(3, columns)
@@ -41,7 +45,7 @@ for i in range(25):
 #     for row in grid:
 # 		# for ch in row:
 
-
+# the convert function changes our 1*1 elements into elements each of size 2*4
 def convert(grid):
     output = [[" " for i in range(4 * columns)] for j in range(2 * lines)]
     for i in range(len(grid)):
@@ -70,7 +74,7 @@ def convert(grid):
 
     return output
 
-
+# the function that is called each time we want to print the board and each time we convert the grid and print it to the output
 def print_board(grid):
     output = convert(grid)
 
