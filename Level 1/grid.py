@@ -74,7 +74,7 @@ def convert(grid):
 def print_board(grid):
     output = convert(grid)
 
-    # os.system('clear')
+    os.system('clear')
     for row in output:
         print("".join(row), '\n', end='\r')
 

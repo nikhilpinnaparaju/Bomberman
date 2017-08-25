@@ -30,7 +30,16 @@ Bricks
 KillingFunction
 MovingEnemies
 
-The Code has been run on a terminal of Black Background, Please consider that will running game
+The Code has been run on a terminal of Black Background, Please consider that will running game.
+
+Note: The movement of enemies is based on a random number generated using python random from 0-3. If the enemy is surrounded by 2 or 3 bricks or walls
+it might seem like they are not moving however that is not the case so please consider that it could be the case that the random number generated does
+not allow motion
+
+Levels - 
+
+Level 1 - Regular game of Bomberman. 3 lives for Bomberman and 1 life per Enemy
+Level 2 - Enemies move faster. 2 Lives per Enemy and only 2 lives for Bomberman. Bigger Board
 
 Hope you enjoy the game.
 Thanks in Advance.
