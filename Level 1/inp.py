@@ -11,8 +11,11 @@ import tty
 import random
 from termcolor import colored, cprint
 
-# The function that moves our bomberman as per the rules, i.e can't move through walls and moves according to user input
+# The function that moves our bomberman as per the rules,
+# i.e can't move through walls and moves according to user input
 # allows the drop of bombs using 'b' and quit game using 'q'
+
+
 def controller(bomber):
     while bomber.life:
 
@@ -83,20 +86,23 @@ def controller(bomber):
                         bomber.bomb.bombs_left = bomber.bomb.bombs_left - 1
                         bomber.bomb.start()
 
-        # if (not(bomber.bomb.location['x']==None) and not(bomber.bomb.location['y']==None)):
-            # grid[bomber.bomb.location['x']][bomber.bomb.location['y']] = str(bomber.bomb.time_left)
+        # if (not(bomber.bomb.location['x']==None) and
+        # not(bomber.bomb.location['y']==None)):
+            # grid[bomber.bomb.location['x']][bomber.bomb.location['y']
+            # ] = str(bomber.bomb.time_left)
 
         if control == 'q':
             break
 
         print_board(grid)
-        print("Lives: ",bomber.life)
+        print("Lives: ", bomber.life)
 
     os._exit(1)
     # print("you moved:",control)
 
 
-# moves the enemies using a random number from 0-3 and prevents movement through the walls
+# moves the enemies using a random number from 0-3 and prevents movement
+# through the walls
 def moveEnemies(enemies):
     for enemy in enemies:
         q = random.randrange(3)

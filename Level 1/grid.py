@@ -11,8 +11,10 @@ columns = 19
 
 grid = []
 
-# The following for loops make the board to a design that we would want as soon from the sample in the Problem statement
-# The grid at the moment is in 1*1 elements and later we will convert each element into 2*4 elements
+# The following for loops make the board to a design that we would want as
+# soon from the sample in the Problem statement
+# The grid at the moment is in 1*1 elements and later we will convert each
+# element into 2*4 elements
 for row in range(lines):
     grid.append([])
 
@@ -47,11 +49,14 @@ for i in range(25):
 # 		# for ch in row:
 
 # the convert function changes our 1*1 elements into elements each of size 2*4
+
+
 def convert(grid):
     output = [[" " for i in range(4 * columns)] for j in range(2 * lines)]
     for i in range(len(grid)):
         for j in range(len(grid)):
-            if (grid[i][j] == '3' or grid[i][j] == '2' or grid[i][j] == '1' or grid[i][j] == '0'):
+            if (grid[i][j] == '3' or grid[i][j] == '2' or grid[i][j] == '1' or
+                    grid[i][j] == '0'):
                 output[2 * j][4 * i] = '['
                 output[2 * j][4 * i + 1] = grid[i][j]
                 output[2 * j][4 * i + 2] = grid[i][j]
@@ -73,7 +78,10 @@ def convert(grid):
 
     return output
 
-# the function that is called each time we want to print the board and each time we convert the grid and print it to the output
+# the function that is called each time we want to print the board and
+# each time we convert the grid and print it to the output
+
+
 def print_board(grid):
     output = convert(grid)
 
