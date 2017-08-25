@@ -43,9 +43,10 @@ not allow motion
 ###Levels - 
 
 *Level 1 - Regular game of Bomberman. 3 lives for Bomberman and 1 life per Enemy
-*Level 2- Enemies move faster. 2 Lives per Enemy and only 2 lives for Bomberman. Bigger Board. Double number of enemies from Level 1. 
+*Level 2 - Enemies move faster. 2 Lives per Enemy and only 2 lives for Bomberman. Bigger Board. Double number of enemies from Level 1. 
+*Level 3 - 3 Lives per Enemy and only 1 life for Bomberman. More enemies. Bomb takes longer to explode. Fast enemies
 
-Note: Any number of enemies can be added by adding a line in the main.py file (Usage: "**<var name>** = enemy()" and then "enemies.add(**<var name>)**")
+Note: Any number of enemies can be added by adding a line in the main.py file (Usage: "**[var name]** = enemy()" and then "enemies.add(**[var name])**")
 
 ###Implementation of OOPS Concepts:- 
 
