@@ -1,6 +1,7 @@
 import os
 import random
 from termcolor import colored, cprint
+from colored import fore, style
 
 score = 0
 
@@ -50,9 +51,7 @@ def convert(grid):
     output = [[" " for i in range(4 * columns)] for j in range(2 * lines)]
     for i in range(len(grid)):
         for j in range(len(grid)):
-
-            if (grid[i][j] == '3' or grid[i][j] == '2' or
-                    grid[i][j] == '1' or grid[i][j] == '0'):
+            if (grid[i][j] == '3' or grid[i][j] == '2' or grid[i][j] == '1' or grid[i][j] == '0'):
                 output[2 * j][4 * i] = '['
                 output[2 * j][4 * i + 1] = grid[i][j]
                 output[2 * j][4 * i + 2] = grid[i][j]

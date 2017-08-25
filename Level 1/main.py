@@ -10,6 +10,7 @@ import copy
 # declaration of the bomberman on the grid
 grid[1][1] = 'B'
 
+# Creation of a bomberman object and a bomb object
 bomber = bomberman()
 timebomb = bomb()
 
@@ -17,8 +18,10 @@ bomber.bomb = timebomb
 
 # print(bomber.bomb.time_left)
 
+# declaration of a set of enemies 
 enemies = set()
 
+# declaring some enemies
 a = enemy()
 b = enemy()
 # c = enemy()
@@ -27,15 +30,18 @@ enemies.add(a)
 enemies.add(b)
 # enemies.append(c)
 
+# adding the enemies to the grid
 for i in enemies:
     # print(i.location['x'],i.location['y'])
     grid[i.location['x']][i.location['y']] = 'E'
 
+# class declaration to start the async process of enemies movement
 class movingEnemies(RepeatedTimer):
     def __init__(self):
         self.enemies = enemies
         RepeatedTimer.__init__(self, 1, moveEnemies, enemies)
 
+# continously checks if there an overlap in position to see if any lives need to be lost be it enemy or bomberman
 class killingFunction(RepeatedTimer):
 
     def __init__(self):
@@ -93,6 +99,7 @@ class killingFunction(RepeatedTimer):
                         print("Game Over")
                         os._exit(1)
 
+# starts the killing check function and the enemy movement function
 scoring = killingFunction()
 scoring.start()
 
